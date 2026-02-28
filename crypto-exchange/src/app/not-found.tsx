@@ -7,40 +7,43 @@ import { Home, ArrowLeft } from "lucide-react";
 export default function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center px-4">
-        <div className="mb-8">
-          <h1 className="text-9xl font-bold text-primary mb-4">404</h1>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
+      <div className="text-center space-y-8 p-8">
+        <div className="space-y-4">
+          <h1 className="text-9xl font-bold text-primary">404</h1>
+          <h2 className="text-4xl font-semibold text-foreground">
+            Page Not Found
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-md mx-auto">
+            Sorry, we couldn&apos;t find the page you&apos;re looking for. 
+            It might have been moved or doesn&apos;t exist.
+          </p>
         </div>
-        
-        <h2 className="text-3xl font-semibold text-foreground mb-4">
-          Page Not Found
-        </h2>
-        
-        <p className="text-muted-foreground text-lg mb-8 max-w-md mx-auto">
-          Sorry, we couldn't find the page you're looking for. 
-          Perhaps you've mistyped the URL or the page has been moved.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="gap-2">
+
+        <div className="flex gap-4 justify-center">
+          <Button asChild variant="default">
             <Link href="/">
-              <Home className="w-4 h-4" />
+              <Home className="mr-2 h-4 w-4" />
               Go Home
             </Link>
           </Button>
           
-          <Button asChild variant="outline" size="lg" className="gap-2">
-            <Link href="/trade">
-              <ArrowLeft className="w-4 h-4" />
-              Go to Trade
+          <Button asChild variant="outline">
+            <Link href="/markets">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Markets
             </Link>
           </Button>
         </div>
-        
-        <div className="mt-12 p-6 rounded-lg border border-border bg-card max-w-md mx-auto">
+
+        <div className="pt-8 border-t border-border">
           <p className="text-sm text-muted-foreground">
-            If you believe this is an error, please contact our support team.
+            If you think this is a bug, please{" "}
+            <a 
+              href="#" 
+              className="text-primary hover:underline"
+            >
+              contact support
+            </a>
           </p>
         </div>
       </div>
